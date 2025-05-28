@@ -1,51 +1,44 @@
-# Pre-entrega-React-25022
-✅ Requerimiento #1: Funcionalidad básica del carrito de compras
-- Listar productos disponibles
-Crea un componente (por ejemplo, ProductList) que muestre los productos.
-Puedes usar una lista fija o una obtenida desde una API.
-- Manejo del carrito con useState
-Crea un estado para el carrito (const [cart, setCart] = useState([])).
-Este estado debe actualizarse al agregar o quitar productos.
-- Agregar productos al carrito
-Implementa un botón en cada producto con un evento onClick.
-Al hacer clic, el producto debe agregarse al carrito usando setCart.
-- Mostrar el carrito en otro componente
-Crea un componente separado (por ejemplo, Cart) que reciba y muestre los productos del carrito.
-- Diseño del layout general
-Crea un diseño claro y navegable: navbar, footer y vista principal de productos.
+📌 Pre-entrega React 25022
+Este proyecto es una implementación de un eCommerce en React, que incluye carrito de compras, conexión con API de productos, enrutamiento dinámico y rutas protegidas.
+
+✅ Requerimiento #1: Funcionalidad básica del carrito
+Listar productos disponibles: Creación de un componente ProductList para mostrar productos desde una lista fija o una API.
+
+Manejo del carrito con useState: Estado const [cart, setCart] = useState([]) para gestionar la compra.
+
+Agregar productos al carrito: Botón con evento onClick para añadir productos mediante setCart().
+
+Mostrar el carrito en otro componente: Cart recibe y muestra los productos agregados.
+
+Diseño del layout general: Secciones organizadas con navbar, footer y vista de productos.
 
 ✅ Requerimiento #2: Conexión con una API de productos
-- Conectar con una API
-Usa fetch en useEffect para traer datos desde una API pública de productos (o cualquier otra).
-- Manejo de carga y errores
-Crea estados para manejar el loading (isLoading) y errores (error).
-- Actualizar estado con useState
-Guarda los productos en un estado como products.
-- Actualizar el diseño del eCommerce
-Asegúrate de que los datos de la API se integren correctamente al diseño.
-- Manejo de efectos secundarios con useEffect
-Llama a la API solo cuando el componente se monte o cuando sea necesario actualizar los productos.
-- Ampliar funcionalidad del carrito
-Permitir eliminar productos del carrito, ver cantidades o totales.
+Conectar con una API: useEffect + fetch para obtener datos de una API pública.
+
+Manejo de carga y errores: Estados isLoading y error para gestionar la respuesta de la API.
+
+Actualizar estado con useState: Guardar productos en const [products, setProducts] = useState([]).
+
+Diseño responsive del eCommerce: Integración fluida de los datos en la interfaz.
+
+Optimización con useEffect: Llamada a la API solo cuando el componente se monta.
+
+Ampliación del carrito: Funcionalidades de eliminación y ajuste de cantidades de productos.
 
 ✅ Requerimiento #3: Implementación de rutas
-- Agregar rutas con react-router-dom
-Instala y configura las rutas (BrowserRouter, Routes, Route).
-- Manejo de carga y errores por ruta
-Muestra mensajes apropiados en cada vista si hay errores o carga.
-- Crear componentes por sección
-Ejemplo: Home, ProductDetail, Cart, About.
-- Navegar entre productos
-Permite ver detalles de un producto al hacer clic.
+Uso de react-router-dom: Configuración con BrowserRouter, Routes y Route.
+
+Manejo de errores por ruta: Mensajes dinámicos según estado de carga o fallos.
+
+Componentización de vistas: Creación de Home, ProductDetail, Cart, About.
+
+Navegación entre productos: Detalles accesibles con onClick.
 
 ✅ Requerimiento #4: Rutas dinámicas y protegidas
-- Rutas dinámicas
-Usa rutas como /product/:id para mostrar detalles individuales.
-- Interactividad
-Permite que los componentes reaccionen al contexto (e.g., mostrar un producto según su ID).
-- Rutas protegidas
-Simula autenticación para acceder a ciertas rutas (por ejemplo, /admin solo si está logueado).
-- Navbar
-Crea una barra de navegación con links a todas las secciones
+Rutas dinámicas (/product/:id): Muestra detalles individuales de productos según su ID.
 
--------------------------------------------------------------------------------------------------------------------
+Interactividad: Componentes que reaccionan al contexto (mostrar info específica).
+
+Rutas protegidas (/admin): Simulación de autenticación para áreas restringidas.
+
+Navbar adaptable: Barra de navegación con accesos directos.
