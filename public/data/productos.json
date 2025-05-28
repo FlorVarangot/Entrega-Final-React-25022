@@ -1,0 +1,200 @@
+[
+    {
+        "Id": "1",
+        "Nombre": "Budinera Morella",
+        "Descripcion": "Bandejita budinera 25x12cm esmaltada. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "24.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "2",
+        "Nombre": "Cazuela Bigo",
+        "Descripcion": "Cazuela con asas 12cm esmaltada. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "18.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "3",
+        "Nombre": "Ensaladera XL",
+        "Descripcion": "Bowl 30cm decorado con engobes y esmaltado. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "32.000,00",
+        "Stock": 5,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "4",
+        "Nombre": "Ensaladera L",
+        "Descripcion": "Bowl 25cm decorado con engobes y esmaltado. Apto utilitario, horno y microondas.",
+        "Categoría": "Utilitario",
+        "Precio": "28.000,00",
+        "Stock": 5,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "5",
+        "Nombre": "Ensaladera M",
+        "Descripcion": "Bowl 20cm decorado con engobes y esmaltado. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "25.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "6",
+        "Nombre": "Ensaladera S",
+        "Descripcion": "Bowl 16cm decorado con engobes y esmaltado. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "20.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "7",
+        "Nombre": "Aros Amapola",
+        "Descripcion": "Par de aros en gres, esmaltados.",
+        "Categoria": "Joyeria",
+        "Precio": "15.000,00",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "8",
+        "Nombre": "Jarra Mora",
+        "Descripcion": "Jarra 1.5L esmaltada. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "45.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "9",
+        "Nombre": "Mate bolita",
+        "Descripcion": "Mate bolita. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "18.000,00",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "10",
+        "Nombre": "Platito Peky",
+        "Descripcion": "Platito con palabras cruzadas 12x12 esmaltado. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "15.000,00",
+        "Stock": 30,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "11",
+        "Nombre": "Jarro Martita",
+        "Descripcion": "Taza tipo jarrito 7,5 cm de alto - 8 cm de ancho (ideal para mate). Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "16.000,00",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "12",
+        "Nombre": "Tazón Barto",
+        "Descripcion": "Tazón esmaltado. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "22.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "13",
+        "Nombre": "Cerealero Tupac",
+        "Descripcion": "Cuenco pequeño decorado con técnica de shibori, esmaltado. Apto utilitario, horno y microondas.",
+        "Categoria": "Utilitario",
+        "Precio": "22.000,00",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "14",
+        "Nombre": "Kit QueSea en casa",
+        "Descripcion": "Incluye: 2 kilos de arcilla, engobes (2 colores a elección), barbotina (para ensamblar), 1 lanceta, 1 punzón, 2 pinceles, 1 esponja, dispositivo de tanza para corte, un cuadernillo con imágenes de referencia, primera horneada de las piezas. Además podrás escribirnos para consultarnos si tenes dudas durante el proceso",
+        "Categoria": "Insumo",
+        "Precio": "25.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "15",
+        "Nombre": "Clases regulares",
+        "Descripcion": "Taller grupal una vez por semana, con encuentros de 2 horas. Todos los materiales, insumos, herramientas y horneadas están incluidas. Tenemos cupos de hasta 8 personas por grupo para poder brindar una experiencia más personalizada y armoniosa. No hace falta experiencia previa, todos los niveles son bienvenidos. ¡Consultá por los días y horarios disponibles sin compromiso!",
+        "Categoria": "Taller",
+        "Precio": "35.000",
+        "Stock": 0,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "16",
+        "Nombre": "Evento QueSea itinerante",
+        "Descripcion": "Te ofrecemos la experiencia de construir una pieza en arcilla con los invitados que vos quieras! Nos adaptamos según tus deseos y necesidades. Podemos recibirte en nuestro taller o a domicilio. Nos ocupamos de la organización, planificación, materiales y horneadas.",
+        "Categoria": "Taller",
+        "Precio": "0",
+        "Stock": 0,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "17",
+        "Nombre": "Voucher regalo",
+        "Descripcion": "Incluye: 2 kilos de arcilla, engobes (2 colores a elección), barbotina (para ensamblar), 1 lanceta, 1 punzón, 2 pinceles, 1 esponja, dispositivo de tanza para corte, un cuadernillo con imágenes de referencia, primera horneada de las piezas. Además podrás escribirnos para consultarnos si tenes dudas durante el proceso",
+        "Categoria": "Gift",
+        "Precio": "100.000",
+        "Stock": 100,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "18",
+        "Nombre": "Engobe - Colores primarios",
+        "Descripcion": "Engobe de 250gr. a base de pigmentos con fórmula propia. Ideal para decorar tus piezas de cerámica. Se puede aplicar en estado cuero o estado hueso.",
+        "Categoria": "Insumo",
+        "Precio": "8.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "19",
+        "Nombre": "Engobe - Colores secundarios",
+        "Descripcion": "Engobe de 250gr. a base de pigmentos con fórmula propia. Ideal para decorar tus piezas de cerámica. Se puede aplicar en estado cuero o estado hueso.",
+        "Categoria": "Insumo",
+        "Precio": "12.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "20",
+        "Nombre": "Esmalte transparente",
+        "Descripcion": "Esmalte transparente de 500grs. Ideal para proteger y darle brillo a tus piezas de cerámica.",
+        "Categoria": "Insumo",
+        "Precio": "25.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "21",
+        "Nombre": "Arcilla blanca",
+        "Descripcion": "Arcilla blanca lisa 5Kg - Chilavert",
+        "Categoria": "Insumo",
+        "Precio": "10.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    },
+    {
+        "Id": "22",
+        "Nombre": "Arcilla gres",
+        "Descripcion": "Arcilla Pasta Gres tostado claro X5kg - Chilavert",
+        "Categoria": "Insumo",
+        "Precio": "14.000,00",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/300/200?random=15"
+    }
+]

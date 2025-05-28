@@ -1,0 +1,106 @@
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: var(--background-alternativo);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cart-drawer.open {
+    transform: translateX(0);
+}
+
+.cart-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 2px solid var(--secondary-color);
+    color: var(--third-color);
+}
+
+.cart-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.cart-summary {
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--third-color);
+    background-color: var(--secondary-color);
+}
+
+.pay-link{
+    text-decoration: none;
+    color: orange;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.cart-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--background-alternativo);
+}
+
+.cart-content p {
+    margin: 0;
+    opacity: 0.6;
+}
+
+.close-button{
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--third-color);
+    cursor: pointer;
+}
+
+.trash-button{
+    color: #ff0000;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.empty-button {
+    background-color: transparent;
+    border: 1px solid gray;
+    color: gray;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.empty-button:hover {
+    background-color: gray;
+    color: white;
+}
+
