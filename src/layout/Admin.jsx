@@ -1,47 +1,90 @@
-import React, { useState } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../components/static/Header'
-import Footer from '../components/static/Footer'
-// import ProductList from '../components/ProductList'
-import ProductForm from '../components/ProductForm'
+import { useLocation } from 'react-router-dom';
+import AdminHeader from '../components/admin/AdminHeader'
+import ProductForm from '../components/admin/ProductForm'
+import FormEdicion from '../components/admin/FormEdicion'
+import ProductList from '../components/ProductList'
+import { AdminContext } from '../context/adminContext'
+import loader from '../assets/loading.gif'
 import './styleAdmin.css'
 
 const Admin = () => {
+  const formEditRef = useRef(null)
+  const {
+    productos,
+    loading,
+    open,
+    setOpen,
+    openEditor,
+    setOpenEditor,
+    seleccionado,
+    setSeleccionado,
+    agregarProducto,
+    actualizarProducto,
+    eliminarProducto,
+  } = useContext(AdminContext)
 
-  // const [modoAdmin, setModoAdmin] = useState(true)
+  const location = useLocation();
 
-  const agregarProducto = (nuevoProducto) => {
-    setProductos([...productos, { id: productos.length + 1, ...nuevoProducto }])
-  }
+  useEffect(() => {
+    setOpenEditor(false);
+    setOpen(false);
+  }, [location.pathname]);
 
-  const eliminarProducto = (id) => {
-    setProductos(productos.filter(producto => producto.id !== id))
+  if (loading) {
+    return (
+      <main className="admin-panel">
+        <div className="loader-container">
+          <img src={loader} alt="Loading..." className="loader-image" />
+        </div>
+      </main>
+    )
   }
 
   return (
     <>
-      {/* PEND HEADER ADMIN */}
-      {/* <HeaderAdmin /> */}
+      <AdminHeader />
+      <main className="admin-panel">
+        <section>
+          <h1 className='title'>Panel Administrador</h1>
+          <div className="boton-alta">
+            <button onClick={() => setOpen(true)}>+ Agregar nuevo producto</button>
+          </div>
+        </section>
 
-      <main>
-        <h1>Panel Administrador</h1>
-        <h2>Alta de productos:</h2>
-        <div>
-          <ProductForm agregarProducto={agregarProducto} />
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-          <Link className="link-ver-mas" style={{fontSize: 'large', borderRadius: '10px', boxShadow: '0 0 2px var(--primary-color)' }} 
-          to="/">Salir</Link>
-        </div>
-        <div>
-          <h2> .. </h2>
-          {/* //Productos Admin - PEND */}
-          {/* <ProductList productos={productos} eliminarProducto={eliminarProducto} /> */}
-          {/* Aquí podrías agregar más funcionalidades de administración, como editar productos, ver estadísticas, etc. */}
+        {open && (
+          <section className="form-container">
+            <button className="cerrar-btn" onClick={() => setOpen(false)}> ✕ </button>
+            <ProductForm agregarProducto={agregarProducto} cerrar={() => setOpen(false)} />
+          </section>
+        )}
+
+        {openEditor && (
+          <section ref={formEditRef} className="form-container">
+            <button className="cerrar-btn" onClick={() => setOpenEditor(false)}> ✕ </button>
+            <FormEdicion producto={seleccionado} actualizarProducto={actualizarProducto} cerrar={() => setOpenEditor(false)} />
+          </section>
+        )}
+
+        <section className="productos-admin">
+          <h3 className='title'>Productos</h3>
+          <ProductList
+            productos={productos}
+            eliminarProducto={eliminarProducto}
+            setSeleccionado={setSeleccionado}
+            setOpenEditor={setOpenEditor}
+            formEditRef={formEditRef}
+          />
+        </section>
+
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}>
+          <Link className="link-ver-mas" to="/">Ir a home</Link>
         </div>
       </main>
     </>
   )
 }
+
 
 export default Admin

@@ -1,14 +1,22 @@
-import React from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useContext, useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import './styleDetalle.css'
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'
+import { ProductosContext } from '../context/productsContext'
+import { CartContext } from '../context/cartContext'
+import useEsAdmin from '../auth/useEsAdmin'
 
+const Detalle = () => {
+  const { handleAddToCart } = useContext(CartContext)
+  const { productos } = useContext(ProductosContext)
+  const { id } = useParams()
+  const producto = productos.find(prod => prod.id == id)
+  const [cantidad, setCantidad] = useState(1)
+  const esAdmin = useEsAdmin()
+  const navigate = useNavigate()
 
-const Detalle = ({ productos, agregar }) => {
-  const { id } = useParams();
-  const producto = productos.find(prod => prod.Id == id);
   const handleClick = () => {
-    agregar(producto, 1);
+    handleAddToCart(producto, cantidad);
     toast.success(
       <span><strong>{producto.Nombre}</strong> agregado al carrito!</span>,
       {
@@ -24,29 +32,45 @@ const Detalle = ({ productos, agregar }) => {
   }
 
   return (
-    <main className="detalle-container">
+    <div className="detalle-container">
       {producto ? (
         <section className="detalle-producto">
           <h2>{producto.Nombre}</h2>
           <img src={producto.Imagen} alt={producto.Nombre} />
           <p>{producto.Descripcion}</p>
           <p>Categoría: {producto.Categoria}</p>
-          <p className='producto-precio'>$ {producto.Precio}</p>
+          <p className='producto-precio'>$ {Number(producto.Precio).toLocaleString('es-AR')}</p>
 
-          {producto.Stock > 0 ? (
-            <button className="wanted-button" onClick={handleClick}>
-              ¡QueSea mío!
+          {esAdmin ? (
+            <button
+              className="editar-button"
+              onClick={() => navigate('/admin')}
+            >
+              🛠️ Gestionar producto
             </button>
           ) : (
-            <p className="mensaje-stock">Este producto está agotado.</p>
-          )}
+            <>
+              <div className="cantidad-container">
+                <button className="qty-button" onClick={() => setCantidad(c => Math.max(1, c - 1))} disabled={cantidad <= 1}>−</button>
+                <span>{cantidad}</span>
+                <button className="qty-button" onClick={() => setCantidad(c => Math.min(producto.Stock, c + 1))} disabled={cantidad >= producto.Stock}>+</button>
+              </div>
 
+              {producto.Stock > 0 ? (
+                <button className="wanted-button" onClick={handleClick}>
+                  ¡QueSea mío!
+                </button>
+              ) : (
+                <p className="mensaje-stock">Este producto está agotado.</p>
+              )}
+            </>
+          )}
 
         </section>
       ) : (
         <p>Producto no encontrado.</p>
       )}
-    </main>
+    </div>
   )
 }
 

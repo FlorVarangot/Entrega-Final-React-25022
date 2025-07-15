@@ -1,0 +1,49 @@
+[
+  {
+    "nombre": "Ludmila V",
+    "estrellas": 5,
+    "texto": "Hermoso taller, las clases me encantan y la profe Majo una genia"
+  },
+  {
+    "nombre": "Carolina",
+    "estrellas": 5,
+    "texto": "Lindo espacio y aprendí mucho!!"
+  },
+  {
+    "nombre": "Anónimo",
+    "estrellas": 4,
+    "texto": "Excelente"
+  },
+  {
+    "nombre": "Cristina",
+    "estrellas": 4
+  },
+  {
+    "nombre": "Anónimo",
+    "estrellas": 5,
+    "texto": "Majo la mejor profe 💜..."
+  },
+  {
+    "nombre": "Elena P",
+    "estrellas": 4,
+    "texto": "Bien."
+  },
+  {
+    "nombre": "Marcela",
+    "estrellas": 4
+  },
+  {
+    "nombre": "Santiago",
+    "estrellas": 5,
+    "texto": "Increíble el taller, gracias !!"
+  },
+  {
+    "nombre": "Pablo",
+    "estrellas": 5,
+    "texto": "Participé de un seminario y todo salió increíble. Esperando volver a participar!!!"
+  },
+  {
+    "nombre": "Susana",
+    "estrellas": 5
+  }
+]

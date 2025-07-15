@@ -1,0 +1,28 @@
+.boton-alta {
+    text-align: center;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+  position: relative;
+  padding: 20px;
+  border: 1px solid var(--third-color);
+  border-radius: 8px;
+  background-color:var(--background-alternativo);
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.form-container button{
+    border-radius: .5rem;
+}
+
+.cerrar-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

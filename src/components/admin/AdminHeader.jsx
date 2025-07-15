@@ -1,0 +1,48 @@
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/authContext'
+import Logo from '../../assets/Logo Que Sea.png'
+import './styleAdminHeader.css'
+
+const AdminHeader = () => {
+    const { isAuthenticated, logout } = useAuth()
+    const nombreUsuario = sessionStorage.getItem('userNombre')
+    const navigate = useNavigate()
+
+    return (
+        <header className="admin-header">
+            <nav className="admin-nav">
+                <div className="admin-logo">
+                    <img
+                        src={Logo}
+                        alt="Logo QueSea de Barro"
+                        className="logo-nav"
+                        onClick={() => navigate('/')}
+                        style={{ cursor: 'pointer' }}
+                    />
+                </div>
+
+                <ul className="admin-links">
+                    <li><Link to="/admin">Productos</Link></li>
+                    <li className='pending'><Link to="#">Categorías</Link></li>
+                    <li className='pending'><Link to="#">Usuarios</Link></li>
+                    <li className='pending'><Link to="#">Pedidos</Link></li>
+                    <li className='pending'><Link to="#">Mensajes</Link></li>
+                </ul>
+
+                <div className="admin-user-info">
+                    {isAuthenticated && nombreUsuario && (
+                        <span>¡Hola, {nombreUsuario}!</span>
+                    )}
+                    {isAuthenticated && (
+                        <button onClick={logout} className="button-user">
+                            <i className="fa-solid fa-right-from-bracket"></i> Salir
+                        </button>
+                    )}
+                </div>
+            </nav>
+        </header>
+
+    )
+}
+
+export default AdminHeader

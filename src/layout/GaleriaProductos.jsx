@@ -1,25 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Header from '../components/static/Header'
 import Footer from '../components/static/Footer'
 import ProductList from '../components/ProductList'
+import { ProductosContext } from '../context/productsContext'
+import { CartContext } from '../context/cartContext'
+import { SearchContext } from '../context/searchContext'
 import loader from '../assets/loading.gif'
 import './styleGaleria.css'
 
 
-const GaleriaProductos = ({ cart, productos, loading, agregar, borrar, vaciar }) => {
+const GaleriaProductos = () => {
+    const { productos, loading } = useContext(ProductosContext)
+    const { borrar, vaciar } = useContext(CartContext)
+    const { categoriaSeleccionada, setCategoriaSeleccionada } = useContext(SearchContext)
 
-    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
 
     const productosFiltrados = categoriaSeleccionada
-        ? productos.filter(item => item.Categoria && item.Categoria.toLowerCase() === categoriaSeleccionada)
-        : productos;
-
+        ? productos.filter(item => item.Categoria === categoriaSeleccionada)
+        : productos
 
     return (
         <>
-            <Header borrar={borrar} cartItems={cart} vaciar={vaciar} />
-            <h1>Productos</h1>
+            <Header borrar={borrar} cartItems={[]} vaciar={vaciar} />
             <main>
+                <h1 className='title'>PRODUCTOS</h1>
                 <div className="filter-container">
                     <select
                         name="filter"
@@ -29,14 +33,16 @@ const GaleriaProductos = ({ cart, productos, loading, agregar, borrar, vaciar })
                         className="custom-select"
                     >
                         <option value="">Seleccionar...</option>
-                        <option value="utilitario">Utilitarios</option>
-                        <option value="joyeria">Joyería</option>
-                        <option value="gift">Giftcards</option>
-                        <option value="taller">Cursos, Seminarios y talleres</option>
-                        <option value="insumo">Insumos</option>
+                        <option value="Utilitario">Utilitarios</option>
+                        <option value="Joyeria">Joyería</option>
+                        <option value="Gift">Giftcards</option>
+                        <option value="Taller">Cursos, Seminarios y talleres</option>
+                        <option value="Insumo">Insumos</option>
                     </select>
 
-                    <button onClick={() => setCategoriaSeleccionada('')} className="clear-btn">Limpiar filtros</button>
+                    <button onClick={() => setCategoriaSeleccionada('')} className="clear-btn">
+                        Limpiar filtros
+                    </button>
                 </div>
 
                 {loading ? (
@@ -44,9 +50,8 @@ const GaleriaProductos = ({ cart, productos, loading, agregar, borrar, vaciar })
                         <img src={loader} alt="Loading..." className="loader-image" />
                     </div>
                 ) : (
-                    <ProductList productos={productosFiltrados} agregar={agregar} />
+                    <ProductList productos={productosFiltrados} />
                 )}
-
             </main>
             <Footer />
         </>

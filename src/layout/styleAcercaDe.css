@@ -1,0 +1,100 @@
+
+div .bio {
+    text-align: justify;
+    display: flow-root;
+    margin-top: 1.25rem;
+}
+
+.bio p{
+    font-size: large;
+    color: var(--primary-color);
+}
+
+.bio .title{
+    text-align: left;
+}
+
+.img-perfil {
+    float: left;
+    max-width: 180px;
+    width: 70%;
+    margin: 3.5rem 1.25rem 0.25rem 0;
+    border-radius: 8px;
+}
+
+.img-taller-1 {
+    float: right;
+    max-height: 200px;
+    margin: 3.5rem 0 1rem 2rem;
+    border-radius: 8px;
+}
+
+.img-perfil-2 {
+    float: left;
+    max-width: 120px;
+    width: 70%;
+    margin: 0 1.25rem 0.25rem 0;
+    border-radius: 8px;
+}
+
+.imagenes-taller {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 400px 400px 400px;
+    grid-template-areas:
+        'b-img1 b-img2 b-img3 b-img4'
+        'b-img1 b-img5 b-img5 b-img6'
+        'b-img1 b-img5 b-img5 b-img7';
+    grid-gap: 2rem;
+    padding: 1% 5% 2%;
+}
+
+.imagenes-taller .b-img1 {
+    grid-area: b-img1;
+}
+
+.imagenes-taller .b-img3 {
+    grid-area: b-img3;
+}
+
+.imagenes-taller .b-img4 {
+    grid-area: b-img4;
+}
+
+.imagenes-taller .b-img5 {
+    grid-area: b-img5;
+}
+
+.imagenes-taller .b-img6 {
+    grid-area: b-img6;
+}
+
+.bio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 2s;
+    border-radius: 8px;
+}
+
+.logo-bio {
+    align-self: center;
+    max-width: 250px;
+    width: 30%;
+    margin: 1.25rem;
+    border: solid 2px var(--primary-color);
+    border-radius: 50%;
+}
+
+.link-reviews {
+    cursor: pointer; 
+    text-decoration: none;
+    color: orange;
+    font-weight: 600; 
+    text-align: center;
+}
+
+.link-reviews:hover {
+    transform: scale(1.02);
+    text-decoration: underline;
+}

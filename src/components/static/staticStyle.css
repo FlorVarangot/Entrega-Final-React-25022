@@ -2,13 +2,18 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-top {
     background-color: var(--third-color);
     color: var(--primary-color);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 10px 20px;
     height: 15dvh;
@@ -19,24 +24,28 @@ header {
     align-items: center;
 }
 
-.search-bar {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    max-width: 70%;
-    padding: 1%;
-    margin-left: 20px;
-}
-
 .nav-down {
-    background-color:var(--background-alternativo);
     padding: 10px;
     text-align: center;
+    background-color: var(--background-alternativo);
     color: var(--third-color);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 10dvh;
+    gap: 1rem;
+}
+
+.boton-admin {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.boton-admin:hover {
+    color: orange;
+}
+
+.admin-link-container {
+    margin-top: auto;
 }
 
 .link {
@@ -46,12 +55,16 @@ header {
     font-weight: 500;
 }
 
+.link.active {
+    color: orange;
+    font-weight: bold;
+}
+
 .link:hover {
     color: var(--secondary-color);
 }
 
-
-ul{
+ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -61,24 +74,24 @@ ul{
 }
 
 .logo-nav:hover {
-  filter: drop-shadow(0 0 0.5em #fbfbfbb7);
+    filter: drop-shadow(0 0 0.5em #fbfbfbb7);
 }
 
-.logo-nav{
+.logo-nav {
     border-radius: 50%;
     width: 80px;
     height: auto;
 }
 
 .button-cart,
-.button-user{
+.button-user {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
 .button-cart,
-.button-user a{
+.button-user a {
     color: var(--primary-color);
     text-decoration: none;
 }
@@ -89,17 +102,115 @@ ul{
 }
 
 .cart-nav i,
-.user-nav i{
+.user-nav i {
     font-size: 18px;
     margin-right: 10px;
+}
+
+.search-container {
+    position: relative;
+    flex-grow: 1;
+    max-width: 60%;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px 6px 0 0;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.dropdown-sugerencias {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--third-color);
+    opacity: 0.9;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 1001;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 220px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 6px 6px;
+    box-sizing: border-box;
+}
+
+.dropdown-sugerencias li {
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+.dropdown-sugerencias li:hover {
+    background-color: #f0f0f0;
+    color: var(--secondary-color);
+}
+
+.sugerencia-item {
+    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.sugerencia-item:hover {
+  background-color: #f0f0f0;
+}
+
+.sugerencia-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.sugerencia-nombre {
+  flex-grow: 1;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.sugerencia-precio {
+  font-size: 0.9rem;
+  color: #444;
+  white-space: nowrap;
+  margin-left: 20px;
+}
+
+.sugerencia-vacia {
+  padding: 12px;
+  color: #888;
+  font-style: italic;
+  text-align: center;
 }
 
 /* Style para el Footer */
 .footer {
     background-color: var(--background-alternativo);
-    font-size: var(--font-size-mini);
+    font-size: 1.2rem;
     color: var(--third-color);
-    margin: 20px 0;
     padding: 10px 0;
 }
 
@@ -186,4 +297,5 @@ ul{
     width: 90%;
     border: 1px solid var(--third-color);
 }
+
 /* / Footer */

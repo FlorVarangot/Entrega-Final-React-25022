@@ -1,0 +1,44 @@
+.admin-header {
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.admin-logo img {
+    width: 80px;
+  height: auto;
+}
+
+.admin-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.admin-links a:hover {
+  color: var(--secondary-color);
+}
+
+.admin-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

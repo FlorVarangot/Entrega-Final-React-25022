@@ -1,0 +1,114 @@
+.tabla-admin {
+  width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 8px var(--primary-color);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0, auto;
+}
+
+.tabla-admin th,
+.tabla-admin td {
+  padding: 10px 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+}
+
+.tabla-admin th {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  transition: background-color 0.2s;
+  position: relative;
+  user-select: none;
+}
+
+.tabla-admin th:hover {
+  background-color: var(--third-color);
+}
+
+.tabla-admin td {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.tabla-admin td button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+  color: var(--primary-color);
+}
+
+.tabla-admin td button:hover {
+  transform: scale(1.2);
+  color: var(--third-color);
+}
+
+.paginado-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-top: 1px solid var(--primary-color);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.paginado-admin button {
+  padding: 8px 12px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: bold;
+}
+
+.paginado-admin button:disabled {
+  background-color: rgba(100, 100, 100, 0.3);
+  cursor: not-allowed;
+}
+
+.paginado-admin select {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.fa-circle-up,
+.fa-circle-down {
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.fa-circle-up.activo,
+.fa-circle-down.activo {
+  opacity: 1;
+  color: var(--third-color);
+}
+
+.filtros-admin {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filtros-admin select,
+.filtros-admin input[type="checkbox"] {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+

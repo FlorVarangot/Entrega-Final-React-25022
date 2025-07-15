@@ -6,26 +6,31 @@ import Detalle from '../components/Detalle'
 import loader from '../assets/loading.gif'
 import '../components/styleDetalle.css'
 
-const DetalleProducto = ({ cart, productos, loading, agregar, borrar, vaciar }) => {
+const DetalleProducto = ({ loading }) => {
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
+
     return (
         <>
-            <Header borrar={borrar} cartItems={cart} vaciar={vaciar} />
+            <Header />
             <main>
                 {loading ? (
                     <div className="loader-container">
                         <img src={loader} alt="Loading..." className="loader-image" />
                     </div>
                 ) : (
-                    <Detalle productos={productos} agregar={agregar} />
+                    <Detalle />
                 )}
 
+                <div className='volver-container'>
+                    <Link className="link-volver" to="/productos">
+                        Volver a Productos
+                    </Link>
+                </div>
                 <div className="contacto-container">
                     <div className="contacto-texto">
                         <p>¿Dudas? ¿Consultas? ¿Comentarios?</p>
-                        <p>¿Necesitas ayuda o asesoramiento?</p>
                     </div>
                     <div className="contacto-boton">
                         <p>¡Escribinos!</p>
@@ -33,7 +38,6 @@ const DetalleProducto = ({ cart, productos, loading, agregar, borrar, vaciar }) 
                     </div>
                 </div>
             </main>
-
             <Footer />
         </>
     )
