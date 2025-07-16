@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
             const foundUser = users.find(
                 (u) => u.user === user && u.password === password
-            );
+            )
 
             if (foundUser) {
                 setIsAuthenticated(true)
@@ -46,7 +46,6 @@ export const AuthProvider = ({ children }) => {
                 sessionStorage.setItem('isAuth', true)
                 sessionStorage.setItem('userNombre', foundUser.user)
                 sessionStorage.setItem('userRole', foundUser.role)
-
 
                 if (foundUser.role === 'admin') {
                     navigate('/admin')
@@ -66,7 +65,7 @@ export const AuthProvider = ({ children }) => {
             console.error('Error fetching users: ', err)
             setError({ User: 'Algo salió mal. Por favor, intentalo de nuevo más tarde.' })
         }
-    };
+    }
 
     const logout = () => {
         Swal.fire({
@@ -94,11 +93,10 @@ export const AuthProvider = ({ children }) => {
                     confirmButtonColor: 'var(--third-color)',
                     timer: 1500,
                     showConfirmButton: false
-                });
+                })
             }
-        });
-    };
-
+        })
+    }
 
     return (
         <AuthContext.Provider value={{

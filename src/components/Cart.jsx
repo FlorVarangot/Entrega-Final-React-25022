@@ -58,10 +58,11 @@ const Cart = ({ isOpen, onClose }) => {
                             <p><strong>Total a pagar:</strong> ${totalPrecio.toLocaleString()}</p>
                             <div style={{ marginTop: '10px' }} >
                                 <button
+                                    type='button'
                                     className='pay-link'
                                     onClick={() => {
                                         if (!isAuthenticated) {
-                                            onClose()
+                                            onClose();
                                             Swal.fire({
                                                 title: 'Iniciá sesión para continuar',
                                                 text: 'Para finalizar tu compra, primero ingresá a tu cuenta.',
@@ -74,8 +75,8 @@ const Cart = ({ isOpen, onClose }) => {
                                             })
                                             return
                                         }
+
                                         sessionStorage.setItem('ticketDetalle', JSON.stringify(cart))
-                                        handleEndShop()
                                         onClose()
                                         navigate('/success', {
                                             state: {
@@ -93,7 +94,7 @@ const Cart = ({ isOpen, onClose }) => {
                     </>
                 )}
             </div>
-        </div>
+        </div >
     )
 }
 

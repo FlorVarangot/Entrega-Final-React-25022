@@ -79,7 +79,7 @@ const Admin = () => {
         </section>
 
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}>
-          <Link className="link-ver-mas" to="/">Ir a home</Link>
+          <Link className="link-ver-mas" to="/">Ir al Inicio</Link>
         </div>
       </main>
     </>

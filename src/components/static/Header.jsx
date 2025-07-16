@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import useEsAdmin from '../../auth/useEsAdmin'
 import { useAuth } from '../../context/authContext'
@@ -33,9 +33,9 @@ const Header = () => {
     <header>
       <nav className="nav-top">
         <div className="logo-container">
-          <Link to='/'>
+          <NavLink to='/'>
             <img className="logo-nav" src={Logo} alt="Logo QueSea de Barro" style={{ cursor: 'pointer' }} />
-          </Link>
+          </NavLink>
         </div>
         <div className='search-container'>
           <input
@@ -69,12 +69,6 @@ const Header = () => {
           )}
         </div>
 
-        {mostrarDropdown && terminoBusqueda && sugerencias.length === 0 && (
-          <ul className="dropdown-sugerencias">
-            <li className="sugerencia-vacia">No se encontraron productos</li>
-          </ul>
-        )}
-
         {isAuthenticated && nombreUsuario && (
           <span>¡Hola, {nombreUsuario}!</span>
         )}
@@ -84,9 +78,9 @@ const Header = () => {
           </button>
         ) : (
           <button className="button-user">
-            <Link to="/Login">
+            <NavLink to="/Login">
               <i className="fa-solid fa-user"></i> Ingresar
-            </Link>
+            </NavLink>
           </button>
         )}
         <button className="button-cart" onClick={() => setCartOpen(true)}>
@@ -98,17 +92,17 @@ const Header = () => {
 
       <nav className="nav-down">
         <ul>
-          <li><Link to='/' className='link'>Inicio</Link></li>
-          <li><Link to='/acercade' className='link'>Sobre Mí</Link></li>
-          <li><Link to='/productos' className='link'>Productos</Link></li>
-          <li><Link to='/contacto' className='link'>Contacto</Link></li>
+          <li> <NavLink to="/" className={({ isActive }) => isActive ? 'link active' : 'link'}> Inicio </NavLink></li>
+          <li> <NavLink to="/acercade" className={({ isActive }) => isActive ? 'link active' : 'link'}>Sobre Mí</NavLink></li>
+          <li> <NavLink to="/productos" className={({ isActive }) => isActive ? 'link active' : 'link' } >Productos </NavLink> </li>
+          <li> <NavLink to="/contacto" className={({ isActive }) => isActive ? 'link active' : 'link'}>Contacto</NavLink></li>
         </ul>
 
         {esAdmin && (
           <div className="admin-link-container">
-            <Link to="/admin" className="boton-admin">
+            <NavLink to="/admin" className="boton-admin">
               Ir al panel admin
-            </Link>
+            </NavLink>
           </div>
         )}
       </nav>

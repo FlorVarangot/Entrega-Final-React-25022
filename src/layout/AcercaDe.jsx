@@ -47,7 +47,7 @@ const AcercaDe = ({ loading }) => {
                     </div>
                 ) : (
                     <section style={{ alignContent: 'center', textAlign: 'center', padding: '20px' }}>
-                        <h1 className='title'>SOBRE MI</h1>
+                        <h1 className='title'>SOBRE MÍ</h1>
                         <br></br>
                         <div className='bio'>
                             <img src={perfil} alt="Foto de perfil" className="img-perfil"></img>

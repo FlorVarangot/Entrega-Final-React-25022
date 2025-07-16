@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/authContext'
 import Logo from '../../assets/Logo Que Sea.png'
 import './styleAdminHeader.css'
@@ -22,11 +22,11 @@ const AdminHeader = () => {
                 </div>
 
                 <ul className="admin-links">
-                    <li><Link to="/admin">Productos</Link></li>
-                    <li className='pending'><Link to="#">Categorías</Link></li>
-                    <li className='pending'><Link to="#">Usuarios</Link></li>
-                    <li className='pending'><Link to="#">Pedidos</Link></li>
-                    <li className='pending'><Link to="#">Mensajes</Link></li>
+                    <li> <NavLink to="/admin" className={({ isActive }) => isActive ? "admin-link active" : "admin-link"}> Productos </NavLink></li>
+                    <li className='pending' title='¡Proximamente!'><NavLink to="#">Categorías</NavLink></li>
+                    <li className='pending' title='¡Proximamente!'><NavLink to="#">Usuarios</NavLink></li>
+                    <li className='pending' title='¡Proximamente!'><NavLink to="#">Pedidos</NavLink></li>
+                    <li className='pending' title='¡Proximamente!'><NavLink to="#">Mensajes</NavLink></li>
                 </ul>
 
                 <div className="admin-user-info">

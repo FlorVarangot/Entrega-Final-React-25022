@@ -15,11 +15,8 @@ import Success from './layout/Success'
 import Register from './layout/Register'
 import Recover from './layout/Recover'
 import RutasProtegidas from './auth/RutasProtegidas'
-import { useAuth } from './context/authContext'
 
 function App() {
-
-  const { isAuthenticated } = useAuth()
 
   return (
 
@@ -31,7 +28,7 @@ function App() {
       <Route path='contacto' element={<Contacto />} />
       <Route path="/admin" element={ <RutasProtegidas requiredRole="admin"> <Admin /> </RutasProtegidas>}/>
       <Route path='login' element={<Login />} />
-      <Route path="success" element={<Success />} />
+      <Route path="/success" element={ <RutasProtegidas> <Success /> </RutasProtegidas>}/>
       <Route path='register' element={<Register />} />
       <Route path='recover' element={<Recover />} />
       <Route path='*' element={<NotFound />} />

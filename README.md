@@ -94,7 +94,7 @@ Este proyecto es la entrega final del módulo React en Talento Tech. Simula la p
 | SweetAlert2        | Confirmaciones visuales                       |
 | EmailJS            | Simulación de envíos automáticos por email    |
 | MockAPI            | Backend falso para catálogo y autenticación   |
-| GitHub Pages       | Hosting estático final                        |
+| Netlify            | Despliegue en servidor estático moderno       |
 
 ---
 

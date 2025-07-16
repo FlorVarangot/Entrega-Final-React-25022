@@ -9,13 +9,13 @@ const Contacto = ({ cart, borrar, vaciar }) => {
     const formRef = useRef(null);
     const [errors, setErrors] = useState({})
 
-    const fecha = new Date().toLocaleString('es-AR', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    })
+    // const fecha = new Date().toLocaleString('es-AR', {
+    //     day: '2-digit',
+    //     month: '2-digit',
+    //     year: 'numeric',
+    //     hour: '2-digit',
+    //     minute: '2-digit'
+    // })
 
     const [formData, setFormData] = useState({
         name: '',

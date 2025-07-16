@@ -56,8 +56,9 @@ header {
 }
 
 .link.active {
-    color: orange;
-    font-weight: bold;
+  color: orange;
+  font-weight: bold;
+  border-bottom: 2px solid orange;
 }
 
 .link:hover {
@@ -132,7 +133,7 @@ ul {
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--third-color);
+    background: var(--secondary-color);
     opacity: 0.9;
     border: 1px solid #ccc;
     border-top: none;
@@ -163,47 +164,51 @@ ul {
 
 .sugerencia-item {
     margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px 12px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  text-align: left;
-  transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-align: left;
+    transition: background-color 0.2s ease;
 }
 
 .sugerencia-item:hover {
-  background-color: #f0f0f0;
+    background-color: #f0f0f0;
 }
 
 .sugerencia-img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 4px;
-  flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
 }
 
 .sugerencia-nombre {
-  flex-grow: 1;
-  font-weight: 500;
-  margin-left: 8px;
+    flex-grow: 1;
+    font-weight: 500;
+    margin-left: 8px;
 }
 
 .sugerencia-precio {
-  font-size: 0.9rem;
-  color: #444;
-  white-space: nowrap;
-  margin-left: 20px;
+    font-size: 0.9rem;
+    color: #444;
+    white-space: nowrap;
+    margin-left: 20px;
 }
 
 .sugerencia-vacia {
-  padding: 12px;
-  color: #888;
-  font-style: italic;
-  text-align: center;
+    padding: 12px;
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+    display: block;
+    border-radius: 0 0 6px 6px;
+    background-color: white;
 }
 
 /* Style para el Footer */
