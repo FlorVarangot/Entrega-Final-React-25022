@@ -11,7 +11,7 @@ import { AdminProvider } from './context/adminContext.jsx'
 import { SearchProvider } from './context/searchContext.jsx'
 import { ProductosProvider } from './context/productsContext'
 import { BrowserRouter as Router } from 'react-router-dom'
-import ScrollToTop from './components/static/scrollToTop.jsx'
+import ScrollToTop from './components/static/ScrollToTop.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
