@@ -1,3 +1,4 @@
+/* HEADER */
 header {
     display: flex;
     flex-direction: column;
@@ -7,6 +8,10 @@ header {
     z-index: 1000;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+span {
+    padding: 10px;
 }
 
 .nav-top {
@@ -32,7 +37,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    font-size: var(--font-size-small);
 }
 
 .boton-admin {
@@ -56,9 +61,9 @@ header {
 }
 
 .link.active {
-  color: orange;
-  font-weight: bold;
-  border-bottom: 2px solid orange;
+    color: orange;
+    font-weight: bold;
+    border-bottom: 2px solid orange;
 }
 
 .link:hover {
@@ -84,27 +89,32 @@ ul {
     height: auto;
 }
 
+.header-icons {
+    font-size: var(--font-size-small);
+    margin-left: 10px;
+}
+
+.header-icons a{
+    text-decoration: none;
+    color: var(--primary-color)
+}
+
 .button-cart,
 .button-user {
     background-color: transparent;
     border: none;
-    cursor: pointer;
 }
 
-.button-cart,
-.button-user a {
+.header-icons a:hover,
+.button-cart:hover{
+    background: transparent;
+    transform: none;
+}
+
+.user-greeting {
+    font-weight: 600;
+    font-size: large;
     color: var(--primary-color);
-    text-decoration: none;
-}
-
-.button-cart:hover,
-.button-user:hover {
-    background-color: transparent;
-}
-
-.cart-nav i,
-.user-nav i {
-    font-size: 18px;
     margin-right: 10px;
 }
 
@@ -117,11 +127,7 @@ ul {
 }
 
 .search-bar {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px 6px 0 0;
-    font-size: 1rem;
+    font-size: var(--font-size-small);
     box-sizing: border-box;
 }
 
@@ -151,7 +157,7 @@ ul {
 .dropdown-sugerencias li {
     padding: 10px 12px;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: var(--font-size-mini);
     text-align: left;
     display: block;
     width: 100%;
@@ -170,7 +176,7 @@ ul {
     gap: 10px;
     padding: 10px 12px;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: var(--font-size-mini);
     text-align: left;
     transition: background-color 0.2s ease;
 }
@@ -194,24 +200,14 @@ ul {
 }
 
 .sugerencia-precio {
-    font-size: 0.9rem;
+    font-size: var(--font-size-mini);
     color: #444;
     white-space: nowrap;
     margin-left: 20px;
 }
+/* /HEADER */
 
-.sugerencia-vacia {
-    padding: 12px;
-    color: #888;
-    font-style: italic;
-    text-align: center;
-    width: 100%;
-    display: block;
-    border-radius: 0 0 6px 6px;
-    background-color: white;
-}
-
-/* Style para el Footer */
+/* FOOTER */
 .footer {
     background-color: var(--background-alternativo);
     font-size: 1.2rem;
@@ -249,6 +245,7 @@ ul {
 
 .footer img {
     min-width: 30%;
+    max-width: 70%;
 }
 
 .mapa {
@@ -302,5 +299,93 @@ ul {
     width: 90%;
     border: 1px solid var(--third-color);
 }
+/* /FOOTER */
 
-/* / Footer */
+/* MEDIA QUERIES PARA HEADER */
+@media (max-width: 768px) {
+    .nav-top {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .logo-container {
+        margin: 5px;
+    }
+
+    .button-user,
+    .button-cart {
+        font-size: var(--font-size-icono);
+        padding: 18px;
+    }
+
+    .button-user span,
+    .button-cart span {
+        display: none;
+    }
+
+    .search-container {
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .search-bar {
+        max-width: 600px;
+    }
+
+    .nav-down ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .user-greeting {
+        font-size: var(--font-size-small);
+        margin-right: 6px;
+        white-space: nowrap;
+    }
+}
+
+/* MEDIA-QUERIES PARA FOOTER */
+@media (max-width: 768px) {
+    .container-footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        gap: 10px;
+    }
+
+    .section-footer {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mapa {
+        width: 90%;
+        max-width: 600px;
+        height: auto;
+    }
+
+    .footer img {
+        width: 30%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .footer ul {
+        width: 100%;
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer ul li {
+        margin: 1%;
+    }
+
+    .footer p {
+        font-size: smaller;
+        text-align: center;
+    }
+}

@@ -18,10 +18,10 @@ const Home = () => {
             <Header />
             <main>
                 <section className='section-hero'>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '60vh' }}>
+                    <div className='home-hero'>
                         <img className="logo-quesea" src={logo} alt='Logo QueSea de Barro' />
                         <h1 className='title'>¡Hola!</h1>
-                        <h3 className='title'>Qué bueno tenerte de vuelta</h3>
+                        <h3 className='title'>Qué bueno tenerte de vuelta.</h3>
                         <br />
                         <div style={{ textAlign: 'center', marginTop: '10px' }}>
                             <Link className="link-ver" to='/Productos'>Ver Productos</Link>

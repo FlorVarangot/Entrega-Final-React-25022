@@ -56,3 +56,26 @@
   align-items: center;
   gap: 12px;
 }
+
+/* MEDIA QUERIES PARA HEADER */
+@media (max-width: 768px) {
+    .admin-logo {
+        margin: 5px;
+    }
+
+    .button-user {
+        font-size: var(--font-size-small);
+        padding: 18px;
+    }
+
+    .button-user span {
+        display: none;
+    }
+
+    .admin-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+

@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react'
-import { NavLink } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import useEsAdmin from '../../auth/useEsAdmin'
 import { useAuth } from '../../context/authContext'
 import { SearchContext } from '../../context/searchContext'
@@ -14,10 +13,10 @@ const Header = () => {
   const { isAuthenticated, logout } = useAuth()
   const { productos } = useContext(ProductosContext)
   const { terminoBusqueda, setTerminoBusqueda } = useContext(SearchContext)
-  const sugerencias = productos.filter(p => p.Estado === 1 || p.Estado === '1')
-    .filter(
-      p => p.Nombre?.toLowerCase().includes(terminoBusqueda.toLowerCase()))
-    .slice(0, 5)
+  const sugerencias = productos.filter(p =>
+    (p.Estado === 1 || p.Estado === '1') &&
+    p.Nombre?.toLowerCase().includes(terminoBusqueda.toLowerCase())
+  ).slice(0, 5)
   const navigate = useNavigate()
   const [mostrarDropdown, setMostrarDropdown] = useState(false)
   const nombreUsuario = sessionStorage.getItem('userNombre')
@@ -32,12 +31,11 @@ const Header = () => {
   return (
     <header>
       <nav className="nav-top">
-        <div className="logo-container">
-          <NavLink to='/'>
-            <img className="logo-nav" src={Logo} alt="Logo QueSea de Barro" style={{ cursor: 'pointer' }} />
-          </NavLink>
-        </div>
-        <div className='search-container'>
+        <NavLink to="/" className="logo-container">
+          <img className="logo-nav" src={Logo} alt="Logo QueSea de Barro" />
+        </NavLink>
+
+        <div className="search-container">
           <input
             type="text"
             placeholder="Buscar productos..."
@@ -49,7 +47,6 @@ const Header = () => {
             onBlur={() => setTimeout(() => setMostrarDropdown(false), 150)}
             onFocus={() => setMostrarDropdown(true)}
           />
-
           {mostrarDropdown && terminoBusqueda && sugerencias.length > 0 && (
             <ul className="dropdown-sugerencias">
               {sugerencias.map(p => (
@@ -69,44 +66,45 @@ const Header = () => {
           )}
         </div>
 
-        {isAuthenticated && nombreUsuario && (
-          <span>¡Hola, {nombreUsuario}!</span>
-        )}
-        {isAuthenticated ? (
-          <button onClick={logout} className="button-user">
-            <i className="fa-solid fa-right-from-bracket"></i> Salir
-          </button>
-        ) : (
-          <button className="button-user">
-            <NavLink to="/Login">
-              <i className="fa-solid fa-user"></i> Ingresar
+        <div className="header-icons">
+          {isAuthenticated && nombreUsuario && (
+            <span className="user-greeting">¡Hola, {nombreUsuario}!</span>
+          )}
+          {isAuthenticated ? (
+            <button onClick={logout} className="button-user" title="Salir">
+              <i className="fa-solid fa-right-from-bracket"></i>
+              <span>Salir</span>
+            </button>
+          ) : (
+            <NavLink to="/Login" className="button-user" title="Ingresar">
+              <i className="fa-solid fa-user"></i>
+              <span>Ingresar</span>
             </NavLink>
+          )}
+
+          <button className="button-cart" onClick={() => setCartOpen(true)} title="Carrito">
+            <i className="fa-solid fa-cart-shopping"></i>
+            <span>Carrito</span>
           </button>
-        )}
-        <button className="button-cart" onClick={() => setCartOpen(true)}>
-          <i className="fa-solid fa-cart-shopping"></i> Carrito
-        </button>
+        </div>
 
         <Cart isOpen={cartOpen} onClose={() => setCartOpen(false)} />
       </nav>
 
       <nav className="nav-down">
         <ul>
-          <li> <NavLink to="/" className={({ isActive }) => isActive ? 'link active' : 'link'}> Inicio </NavLink></li>
-          <li> <NavLink to="/acercade" className={({ isActive }) => isActive ? 'link active' : 'link'}>Sobre Mí</NavLink></li>
-          <li> <NavLink to="/productos" className={({ isActive }) => isActive ? 'link active' : 'link' } >Productos </NavLink> </li>
-          <li> <NavLink to="/contacto" className={({ isActive }) => isActive ? 'link active' : 'link'}>Contacto</NavLink></li>
+          <li><NavLink to="/" className={({ isActive }) => isActive ? 'link active' : 'link'}>Inicio</NavLink></li>
+          <li><NavLink to="/acercade" className={({ isActive }) => isActive ? 'link active' : 'link'}>Sobre Mí</NavLink></li>
+          <li><NavLink to="/productos" className={({ isActive }) => isActive ? 'link active' : 'link'}>Productos</NavLink></li>
+          <li><NavLink to="/contacto" className={({ isActive }) => isActive ? 'link active' : 'link'}>Contacto</NavLink></li>
         </ul>
 
         {esAdmin && (
           <div className="admin-link-container">
-            <NavLink to="/admin" className="boton-admin">
-              Ir al panel admin
-            </NavLink>
+            <NavLink to="/admin" className="boton-admin">Ir al panel admin</NavLink>
           </div>
         )}
       </nav>
-
     </header>
   )
 }

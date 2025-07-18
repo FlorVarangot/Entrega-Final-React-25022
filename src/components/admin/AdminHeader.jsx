@@ -12,13 +12,7 @@ const AdminHeader = () => {
         <header className="admin-header">
             <nav className="admin-nav">
                 <div className="admin-logo">
-                    <img
-                        src={Logo}
-                        alt="Logo QueSea de Barro"
-                        className="logo-nav"
-                        onClick={() => navigate('/')}
-                        style={{ cursor: 'pointer' }}
-                    />
+                    <img src={Logo} alt="Logo QueSea de Barro" className="logo-nav" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}/>
                 </div>
 
                 <ul className="admin-links">
@@ -29,19 +23,19 @@ const AdminHeader = () => {
                     <li className='pending' title='¡Proximamente!'><NavLink to="#">Mensajes</NavLink></li>
                 </ul>
 
-                <div className="admin-user-info">
+                <div className="header-icons">
                     {isAuthenticated && nombreUsuario && (
-                        <span>¡Hola, {nombreUsuario}!</span>
+                        <span className='user-greeting'>¡Hola, {nombreUsuario}!</span>
                     )}
                     {isAuthenticated && (
                         <button onClick={logout} className="button-user">
-                            <i className="fa-solid fa-right-from-bracket"></i> Salir
+                            <i className="fa-solid fa-right-from-bracket"></i> 
+                            <span>Salir</span>
                         </button>
                     )}
                 </div>
             </nav>
         </header>
-
     )
 }
 

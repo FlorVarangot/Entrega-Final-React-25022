@@ -1,16 +1,18 @@
-
 div .bio {
     text-align: justify;
     display: flow-root;
     margin-top: 1.25rem;
 }
 
-.bio p{
+.bio p {
+    flex: 1;
     font-size: large;
+    line-height: 1.6;
+    text-align: left;
     color: var(--primary-color);
 }
 
-.bio .title{
+.bio .title {
     text-align: left;
 }
 
@@ -87,14 +89,49 @@ div .bio {
 }
 
 .link-reviews {
-    cursor: pointer; 
+    cursor: pointer;
     text-decoration: none;
     color: orange;
-    font-weight: 600; 
+    font-weight: 600;
     text-align: center;
 }
 
 .link-reviews:hover {
     transform: scale(1.02);
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .bio {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .img-perfil,
+    .img-perfil-2 {
+        max-width: 30%;
+        margin: 10px;
+    }
+
+    .bio p {
+        text-align: left;
+    }
+
+    .logo-bio {
+        display: block;
+        margin: 10px auto;
+        max-width: 120px;
+    }
+
+    .imagenes-taller {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bio-item img {
+        max-height: 250px;
+        object-fit: cover;
+    }
 }

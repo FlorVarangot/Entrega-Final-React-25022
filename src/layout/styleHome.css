@@ -24,6 +24,13 @@
     margin-top: 6dvh;
 }
 
+.home-hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .section-destacados,
 .section-reviews{
     display: flex;
@@ -74,6 +81,17 @@
 .review-texto {
   font-style: italic;
   color: #444;
+}
+
+
+@media (max-width: 768px) {
+    .home-hero {
+        height: 40vh;
+    }
+
+    .home-hero img {
+      margin-top: 20dvh;
+    }
 }
 
 
